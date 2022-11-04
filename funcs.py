@@ -47,15 +47,23 @@ def optimal_production_simulation(mean, stddev, size, retail_price, production_c
         if demand[x] < units_manufactured:
             loss_units = units_manufactured - demand[x]
             profit_dict[demand[x]] = (demand[x] * profit) - (loss_units * (production_cost + disposal_cost))
-        elif demand[x] > units_manufactured:
+
         # Scenario where too little units are manufactured/lower than demand and results in loss profits from customers that want to buy
+        elif demand[x] > units_manufactured:
             loss_customers = demand[x] - units_manufactured
-            profit_dict[demand[x]] = (demand[x] * profit) - (loss_customers * (retail_price - production_cost))
+            profit_dict[demand[x]] = (units_manufactured * profit) - (loss_customers * (retail_price - production_cost))
+
         else:
         # Scenario where demand and units manufactured are equal
             profit_dict[demand[x]] = (units_manufactured * profit)
     print(profit_dict)
 
+    # Calculate mean profit of the production level
+    sum = 0
+    for val in profit_dict.values():
+        sum += val
+    result = round(sum / len(profit_dict))
+    print("The computed mean at production level: " + str(units_manufactured) + " ---> " + str(result))
 
 
 optimal_production_simulation(150, 20, 1000, 150, 28.5, 8.5, 160)
