@@ -20,13 +20,9 @@ def generate_random_demand(mean, stddev, size):
     demand = np.random.normal(mean, stddev, size)
     for i in range(size):
         demand[i] = round(demand[i])
-
-    print(demand[i])
     return demand
 
-
-
-def optimal_production_simulation(mean, stddev, size, retail_price, production_cost, disposal_cost, number_to_manufacture):
+def optimal_production_simulation(mean, stddev, size, retail_price, production_cost, disposal_cost, units_manufactured):
     """
     Uses inputs to calculate the optimal production level given randomly generated demand
 
@@ -39,9 +35,27 @@ def optimal_production_simulation(mean, stddev, size, retail_price, production_c
     Parameter disposal_cost: the costs associated with disposing of the product in an environmentally sustainable way
     Precondition: disposal_cost is an integer >= $0.00
 
-    Parameter number_to_manufacture: the number that is manufactured as a result of the inputs
-    Precondition: number_to_manufacture is an integer >= 0
+    Parameter units_manufactured: the number that is manufactured as a result of the inputs
+    Precondition: units_manufactured is an integer >= 0
     """
+    demand = generate_random_demand(mean, stddev, size)
+    profit = retail_price - production_cost
+    profit_dict = {}
+
+    for x in range(size):
+        # Scenario where too many units are manufactured/higher than demand and results in loss from unsold units + disposal cost
+        if demand[x] < units_manufactured:
+            loss_units = units_manufactured - demand[x]
+            profit_dict[demand[x]] = (demand[x] * profit) - (loss_units * (production_cost + disposal_cost))
+        elif demand[x] > units_manufactured:
+        # Scenario where too little units are manufactured/lower than demand and results in loss profits from customers that want to buy
+            loss_customers = demand[x] - units_manufactured
+            profit_dict[demand[x]] = (demand[x] * profit) - (loss_customers * (retail_price - production_cost))
+        else:
+        # Scenario where demand and units manufactured are equal
+            profit_dict[demand[x]] = (units_manufactured * profit)
+    print(profit_dict)
 
 
-print(generate_random_demand(150, 20, 10))
+
+optimal_production_simulation(150, 20, 1000, 150, 28.5, 8.5, 160)
