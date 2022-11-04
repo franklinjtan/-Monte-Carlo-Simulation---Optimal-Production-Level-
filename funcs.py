@@ -1,6 +1,6 @@
 """
 Author: GROUP 10
-Date: 11/03/22
+Date: 11/04/22
 """
 import numpy as np
 
@@ -19,7 +19,7 @@ def generate_random_demand(mean, stddev, size):
     """
     demand = np.random.normal(mean, stddev, size)
     for i in range(size):
-        demand[i] = round(demand[i])
+        demand[i] = round(demand[i],4)
     return demand
 
 def optimal_production_simulation(mean, stddev, size, retail_price, production_cost, disposal_cost, units_manufactured):
@@ -56,14 +56,22 @@ def optimal_production_simulation(mean, stddev, size, retail_price, production_c
         else:
         # Scenario where demand and units manufactured are equal
             profit_dict[demand[x]] = (units_manufactured * profit)
-    print(profit_dict)
+    # print(profit_dict) # Checking what the profit dictionary looks like
+    print(str(units_manufactured) + " units manufactured")
 
     # Calculate mean profit of the production level
     sum = 0
     for val in profit_dict.values():
         sum += val
-    result = round(sum / len(profit_dict))
-    print("The computed mean at production level: " + str(units_manufactured) + " ---> " + str(result))
+    result = round(sum / len(profit_dict),2)
+    print("AVG: " + str(result))
+
+    # Calculate standard deviation of the profit
+    profit_list = []
+    for val in profit_dict.values():
+        profit_list.append(val)
+    std = round(np.std(profit_list),2)
+    print("STD: " + str(std))
 
 
 optimal_production_simulation(150, 20, 1000, 150, 28.5, 8.5, 160)
