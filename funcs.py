@@ -18,7 +18,12 @@ def generate_random_demand(mean, stddev, size):
     Precondition: size is an integer
     """
     demand = np.random.normal(mean, stddev, size)
+    for i in range(size):
+        demand[i] = round(demand[i])
+
+    print(demand[i])
     return demand
+
 
 
 def optimal_production_simulation(mean, stddev, size, retail_price, production_cost, disposal_cost, number_to_manufacture):
@@ -38,4 +43,5 @@ def optimal_production_simulation(mean, stddev, size, retail_price, production_c
     Precondition: number_to_manufacture is an integer >= 0
     """
 
-# print(generate_random_demand(150, 20, 1000))
+
+print(generate_random_demand(150, 20, 10))
