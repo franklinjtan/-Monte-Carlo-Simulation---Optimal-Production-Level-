@@ -64,7 +64,7 @@ def run_simulation(min_lvl, max_lvl, mean, stddev, size, retail_price, productio
     y_profit = []
     for i in range(min_lvl, max_lvl):
         x_manufacture_level.append(i)
-        y_profit.append(calc_optimal_production(mean, stdev, size, retail_price, production_cost, disposal_cost, i))
+        y_profit.append(calc_optimal_production(mean, stddev, size, retail_price, production_cost, disposal_cost, i))
 
     plt.plot(x_manufacture_level, y_profit, 'ro', markersize=1)
     plt.xlabel('Manufacture Level')
@@ -72,15 +72,15 @@ def run_simulation(min_lvl, max_lvl, mean, stddev, size, retail_price, productio
     plt.show()
 
 def run_program():
-    min_lvl = str(input("Enter the lowest manufacturing level you want to simulate: "))
-    max_lvl = str(input("Enter the highest manufacturing level you want to simulate: "))
-    mean = str(input("Enter the mean: "))
-    std = str(input("Enter the standard deviation: "))
-    size = str(input("Enter the number of demand simulations you want to run: "))
-    retail_price = str(input("Enter the retail price: "))
-    production_cost = str(input("Enter the production cost: "))
-    disposal_cost = str(input("Enter the disposal cost: "))
+    min_lvl = int(input("Enter the lowest manufacturing level you want to simulate: "))
+    max_lvl = int(input("Enter the highest manufacturing level you want to simulate: "))
+    mean = int(input("Enter the mean: "))
+    stddev = int(input("Enter the standard deviation: "))
+    size = int(input("Enter the number of demand simulations you want to run: "))
+    retail_price = int(input("Enter the retail price: "))
+    production_cost = int(input("Enter the production cost: "))
+    disposal_cost = int(input("Enter the disposal cost: "))
 
-    run_simulation(min_lvl, max_lvl, mean, std, size, retail_price, production_cost, disposal_cost)
+    run_simulation(min_lvl, max_lvl, mean, stddev, size, retail_price, production_cost, disposal_cost)
 
 run_program()
