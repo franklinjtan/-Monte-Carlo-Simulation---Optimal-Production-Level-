@@ -66,6 +66,11 @@ def run_simulation(min_lvl, max_lvl, mean, stddev, size, retail_price, productio
         x_manufacture_level.append(i)
         y_profit.append(calc_optimal_production(mean, stddev, size, retail_price, production_cost, disposal_cost, i))
 
+    # Print out the recommendation to the user
+    optimal_value_profit = max(y_profit)
+    optimal_number = x_manufacture_level[y_profit.index(optimal_value_profit)]
+    print("Recommendation: " + str(optimal_number) + " units yields an average profit of " + "$" + str(optimal_value_profit))
+
     plt.plot(x_manufacture_level, y_profit, 'ro', markersize=1)
     plt.xlabel('Manufacture Level')
     plt.ylabel('Profit')
