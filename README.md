@@ -13,3 +13,4 @@
 
 ## Libraries Used
 * [Matplotlib](https://matplotlib.org/stable/tutorials/index)
+* [NumPy](https://numpy.org/doc/stable/)
