@@ -9,7 +9,7 @@
 * Identify the optimal level of production
 
 ## Screenshot of Graph Generated
-![Simulation Figure](/images/fig1.png)
+![Simulation Figure](/images/Fig1.png)
 
 ## Libraries Used
 * [Matplotlib](https://matplotlib.org/stable/tutorials/index)
