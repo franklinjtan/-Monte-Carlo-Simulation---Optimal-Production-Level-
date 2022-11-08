@@ -8,6 +8,6 @@
 * Compute mean and standard deviation of the profit
 * Identify the optimal level of production
 
-## Screenshot or Graph Generated
+## Screenshot of Graph Generated
 ![Simulation Figure](/images/fig1.png)
 
