@@ -1,5 +1,5 @@
 # Optimal Production Level Simulation
-* Create a simulation on Python that will generate a recommendation given a set of parameters
+* Created a program simulation written in Python that will generate a recommendation given a set of parameters
 * Parameters: unit price, retail price, cost of disposing, and number of units to manufacture
 
 ## Function Objectives
