@@ -72,8 +72,11 @@ def run_simulation(min_lvl, max_lvl, mean, stddev, size, retail_price, productio
     print("Recommendation: " + str(optimal_number) + " units yields an average profit of " + "$" + str(optimal_value_profit))
 
     plt.plot(x_manufacture_level, y_profit, 'ro', markersize=1)
+    plt.title("Manufacturing Level Simulation", loc = 'left')
     plt.xlabel('Manufacture Level')
     plt.ylabel('Profit')
+    plt.xticks(np.arange(min(x_manufacture_level), max(x_manufacture_level)+1, 10.0))
+    plt.grid()
     plt.show()
 
 def run_program():
