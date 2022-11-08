@@ -88,4 +88,8 @@ def run_program():
 
     run_simulation(min_lvl, max_lvl, mean, stddev, size, retail_price, production_cost, disposal_cost)
 
-run_program()
+# Testing Function: generate_random_demand(mean, stddev, size)
+# print(generate_random_demand(150, 20, 1000))
+
+# Enable to run program
+# run_program()
