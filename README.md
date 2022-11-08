@@ -7,3 +7,6 @@
 * Compute the profit for a given demand and store it in  alist
 * Compute mean and standard deviation of the profit
 * Identify the optimal level of production
+
+![Simulation Figure](/images/fig1.png)
+
