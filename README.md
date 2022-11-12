@@ -11,7 +11,7 @@
 
 ## Screenshot of Graph Generated
 ![Simulation Figure](/images/fig2.png)
-![Simulation Figure](/images/Fig1.png)
+![Simulation Figure](/images/fig3.png)
 
 ## Libraries Used
 * [Matplotlib](https://matplotlib.org/stable/tutorials/index)
