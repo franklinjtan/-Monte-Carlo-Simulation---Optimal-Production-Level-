@@ -3,6 +3,7 @@
 * Parameters: unit price, retail price, cost of disposing, and number of units to manufacture
 
 ## Function Objectives
+* Specify if its normal (Gaussian) or uniform distribution
 * Randomly generate demand instances
 * Compute the profit for a given demand and store it in  alist
 * Compute mean and standard deviation of the profit
