@@ -10,6 +10,7 @@
 * Identify the optimal level of production
 
 ## Screenshot of Graph Generated
+![Simulation Figure](/images/fig2.png)
 ![Simulation Figure](/images/Fig1.png)
 
 ## Libraries Used
