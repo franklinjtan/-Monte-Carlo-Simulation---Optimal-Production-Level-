@@ -1,4 +1,4 @@
-# Optimal Production Level Simulation
+# Monte Carlo Simulation - Optimal Production Level 
 * Created a program simulation written in Python that will generate a recommendation given a set of parameters
 * Parameters: unit price, retail price, cost of disposing, and number of units to manufacture
 
